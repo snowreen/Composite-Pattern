@@ -3,23 +3,16 @@ public class Main {
 	
 	public static void main (String[] args){
 		
-		Employee ceo = new Employee("Syeda", "Nowreen", "123", "Chicago IL", "1234454332", "CEO");
-		Employee manager = new Employee("Kate", "Smith", "456", "Chicago,IL", "7273214234", "Manager");
-		Employee itHead = new Employee("John", "Snow", "786", "Chicago,IL", "2132312432", "IT Head");
-		Employee salesHead = new Employee("Kathy", "Melon", "342", "Chicago,IL", "5424334323", "Sales Head");
-		Employee hrHead = new Employee("Adams", "Smith", "213", "Chicago,IL", "1322132324", "HR Head");
-		Employee juniorManager = new Employee("Bella", "Kardin", "423", "Chicago,IL", "64352324324", "Junior Manager");
+		Employee generalManager = new Manager("Syeda", "Nowreen", 100000);
+		Employee manager = new Manager("Kate", "Smith", 70000);
+		Employee developer1 = new Developer("John", "Snow", 50000);
+		Employee developer2 = new Developer("Kathy", "Melon", 40000);
 		
-		ceo.addEmployee(itHead);
-		ceo.addEmployee(hrHead);
-		ceo.addEmployee(salesHead);
+		generalManager.addChildEmployee(manager);
+		manager.addChildEmployee(developer1);
+		manager.addChildEmployee(developer2);
 		
-		itHead.addEmployee(manager);
-		manager.addEmployee(juniorManager);
-		
-		System.out.println(ceo.toString() + "\n");
-		System.out.println(itHead.toString() + "\n");
-		System.out.println(manager.toString() + "\n");
+		System.out.println(generalManager.toString() + "\n");
 		
 		
 	}
